@@ -10,3 +10,24 @@ div.zentai {
 div.box {
     background: gold;
 }
+a:link {
+    color: pink;
+}
+a:visited {
+    color: green;
+}
+a:hover {
+    text-decoration: none;
+}
+.data1 {
+    color: red;
+}
+.data2 {
+    color: blue;
+}
+.data3 {
+    color: green;
+}
+p {
+    font-style: italic;
+}
