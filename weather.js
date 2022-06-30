@@ -46,7 +46,9 @@ let data = {
 };
 
 ////////// 課題3-2 ここからプログラムを書こう
-console.log(data.name+ "の" +"最高気温は"+data.main.temp_max+"℃, " + "最低気温は"+data.main.temp_min+"℃")
+let kekka = data.name+ "の" +"最高気温は"+data.main.temp_max+"℃, " + "最低気温は"+data.main.temp_min+"℃"
+let s = document.querySelector('span#kekka');
+s.textContent = kekka;
 //console.log(data.name+"、"+data.main.temp_max+" 、"+data.main.temp_min)
 //console.log("最高気温は"+data.main.temp_max+"℃")
 //console.log("最低気温は"+data.main.temp_min+"℃")

@@ -8,35 +8,38 @@ let kaisu = 0;
 // 予想を4回実行する
 // 将来: ボタンを押したら， hantei() を呼び出すように修正する
 hantei();
-hantei();
-hantei();
-hantei();
 
 // ボタンを押した後の処理をする関数 hantei() の定義
 function hantei() {
     let yoso = 4;
     kaisu = kaisu + 1;
-    console.log(kaisu + "回目の予想: " + yoso);
+    let kekka;
+    let s = document.querySelector('span#kaisu');
+    s.textContent = kaisu;
+    let t = document.querySelector('span#suchi');
+    t.textContent = yoso;
     if(kaisu===3){
         if (yoso===kotae) {
-            console.log("正解です。おめでとう！");
+            kekka = ("正解です。おめでとう！");
         } else {
-            console.log("まちがい。残念でした答えは" + kotae + "です。")
+            kekka = ("まちがい。残念でした答えは" + kotae + "です。")
         }
     }
     if (kaisu>3) {
-        console.log("答えは" + kotae + "でした。すでにゲームは終わっています")
+        kekka = ("答えは" + kotae + "でした。すでにゲームは終わっています")
     }
     if (kaisu<3) {
         if (yoso===kotae) {
-            console.log("正解です。おめでとう！");
+            kekka = ("正解です。おめでとう！");
             kaisu = kaisu + 3;
         } else if(yoso<kotae) {
-            console.log("まちがい。答えはもっと大きいですよ")
+            kekka = ("まちがい。答えはもっと大きいですよ")
         } else if(yoso>kotae) {
-            console.log("まちがい。答えはもっと小さいですよ")
+            kekka = ("まちがい。答えはもっと小さいですよ")
         }
     }
+    let u = document.querySelector('span#result');
+    u.textContent = kekka;
     // 第5回課題:テキストボックスの数値をここに代入
     // 課題3-1：ここの判定処理を作成する．
     //        ページに表示する方法はまだ習っていないので
