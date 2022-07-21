@@ -1,4 +1,130 @@
-let data = {
+/*
+let b = document.querySelector('#answer');
+b.addEventListener('click', printAnswer);
+function printAnswer() {
+  let cs = document.querySelectorAll('input[name="hobby"]');
+  for (let c of cs) {
+    if (c.checked) {
+
+let a = document.querySelector('#answer');
+a.addEventListener('click', answer);
+function answer() {
+*/
+let b = document.querySelector('#answer');
+b.addEventListener('click', printAnswer);
+
+let a= null
+// 2. イベントハンドラの定義
+
+function printAnswer() {
+  /*
+  // name 属性が hobby の input 要素をすべて検索
+  let cs = document.querySelectorAll('input[name="what"]');
+  for (let c of cs) {
+      if (c.checked) {
+          console.log(c.value);
+          i= c.id
+      }
+  }*/
+    // name 属性が year の input 要素をすべて検索
+    let rs = document.querySelectorAll('input[name="area"]');
+    for (let r of rs) {
+        if (r.checked) {        // r が選択されていたら
+            console.log(r.value);
+            tusin(r.id)
+        }
+    }
+    
+}
+b.addEventListener('click', answer);
+/*
+let a = document.querySelector('#answer');
+a.addEventListener('click', answer);
+*/
+function tusin(id) {
+  //let id = id
+  let url = 'https://www.nishita-lab.org/web-contents/jsons/openweather/' + id+'.json';
+
+  // 通信開始
+	axios.get(url)
+      .then(showResult)
+      .catch(showError)
+      //.then(finish);
+}
+// 通信が成功した時の処理
+function showResult(resp) {
+	// サーバから送られてきたデータを出力
+	let data = resp.data;
+  
+	// data が文字列型なら，オブジェクトに変換する
+	if (typeof data === 'string') {
+		data = JSON.parse(data);
+	}
+  let kekka = data.name + "..."
+  let cs = document.querySelectorAll('input[name="what"]');
+  for (let c of cs) {
+      if (c.checked) {
+        if(c.value == "天気") kekka = kekka +" , "+ c.value +" : " + data.weather.descriptiion
+        if(c.value == "最低気温") kekka = kekka +" , "+ c.value +" : " + data.main.temp_min + "℃ "
+        if(c.value == "最高気温") kekka = kekka +" , "+  + c.value +" : " + data.main.temp_max + "℃ "
+        if(c.value == "湿度") kekka = kekka+" , "+ + c.value +" : " + data.main.humidity+ "% "
+        if(c.value == "風速") kekka = kekka+" , "+ + c.value +" : " + data.wind.speed + "m/s "
+      }
+      
+  }
+  kekka = kekka + "です。"
+  //let kekka = data.name+ "の" +"最高気温は"+data.main.temp_max+"℃, " + "最低気温は"+data.main.temp_min+"℃"
+  let s = document.querySelector('span#result');
+  s.textContent = kekka;
+  
+}
+
+// 通信エラーが発生した時の処理
+function showError(err) {
+	console.log(err);
+}	
+
+/*
+let a = document.querySelector('#answer');
+a.addEventListener('click', answer);
+
+function answer() {
+  let id = '2147714'
+  let url = 'https://www.nishita-lab.org/web-contents/jsons/openweather/' + id+'.json';
+
+  // 通信開始
+	axios.get(url)
+      .then(showResult)
+      .catch(showError)
+      .then(finish);
+}
+// 通信が成功した時の処理
+function showResult(resp) {
+	// サーバから送られてきたデータを出力
+	let data = resp.data;
+
+	// data が文字列型なら，オブジェクトに変換する
+	if (typeof data === 'string') {
+		data = JSON.parse(data);
+	}
+
+	// data をコンソールに出力
+	console.log(data);
+
+	// data.x を出力
+	console.log(data.x);
+}
+
+// 通信エラーが発生した時の処理
+function showError(err) {
+	console.log(err);
+}	
+
+// 通信の最後にいつも実行する処理
+function finish() {
+	console.log('Ajax 通信が終わりました');
+}
+/*let data = {
   "coord": {
     "lon": 116.3972,
     "lat": 39.9075

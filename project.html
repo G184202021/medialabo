@@ -5,83 +5,100 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="project.style.css">
     <title>世界の天気</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
     <script src="weather.js" defer></script>
   </head>
   <body>
     <label for="area">調べたい地域: </label>
     <div>
-      <input type="checkbox" name="area" id=360630 value="Cairo">
+      <input type="radio" name="area" id=360630 value="Cairo">
 		  <label for="Cairo">カイロ（エジプト）</label>
     </div>
     
     
     <div>
-      <input type="checkbox" name="area" id=524901 value="Moscow">
+      <input type="radio" name="area" id=524901 value="Moscow">
 	  	<label for="Moscow">モスクワ（ロシア）</label>
     </div>
     
 
     <div>
-      <input type="checkbox" name="hobby" id=993800 value="Johannesburg">
+      <input type="radio" name="area" id=993800 value="Johannesburg">
 		  <label for="Johannesburg">ヨハネスブルク （南アフリカ））</label>
     </div>
     
 
     <div>
-      <input type="checkbox" name="hobby" id=1816670 value="Beijing">
+      <input type="radio" name="area" id=1816670 value="Beijing">
 		  <label for="Beijing">北京（中華人民共和国）</label>
     </div>
     
 
     <div>
-      <input type="checkbox" name="hobby" id=1850147 value="Tokyo">
+      <input type="radio" name="area" id=1850147 value="Tokyo">
 		  <label for="Tokyo">東京（日本）</label>
     </div>
     
 
     <div>
-      <input type="checkbox" name="hobby" id=1880252 value="Singapore">
+      <input type="radio" name="area" id=1880252 value="Singapore">
 		  <label for="Singapore">シンガポール</label>
     </div>
     
 
     <div>
-      <input type="checkbox" name="hobby" id=2147714 value="Sydney">
+      <input type="radio" name="area" id=2147714 value="Sydney">
 		  <label for="Sydney">シドニー（オーストラリア）</label>
     </div>
     
 
     <div>
-      <input type="checkbox" name="hobby" id=2643743 value="London">
+      <input type="radio" name="area" id=2643743 value="London">
 		  <label for="London">ロンドン（イギリス）</label>
     </div>
 
     <div>
-      <input type="checkbox" name="hobby" id=2968815 value="Paris">
+      <input type="radio" name="area" id=2968815 value="Paris">
 		  <label for="Paris">パリ（フランス）</label>
     </div>
 
 
     <div>
-      <input type="checkbox" name="hobby" id=3451189 value="Rio de Janeiro">
+      <input type="radio" name="area" id=3451189 value="Rio de Janeiro">
       <label for="Rio de Janeiro">リオデジャネイロ（ブラジル）</label>
     </div>
 
     <div>
-      <input type="checkbox" name="hobby" id=5128581 value="New York">
+      <input type="radio" name="area" id=5128581 value="New York">
       <label for="New York">ニューヨーク（アメリカ合衆国）</label>
     </div>
 
     <div>
-      <input type="checkbox" name="hobby" id=5368361 value="Los Angeles">
+      <input type="radio" name="area" id=5368361 value="Los Angeles">
       <label for="Los Angeles">ロサンゼルス（アメリカ合衆国）</label>
     </div>
+
+    <h2>知りたいものは？</h2>
+    <p>
+        <input type="checkbox" name="what" id="data.weather.description" value="天気">
+        <label for="tenki">天気</label>
+        <input type="checkbox" name="what" id=data.main.temp_min value="最低気温">
+        <label for="high">最低気温</label>
+        <input type="checkbox" name="what" id="data.main.temp_max" value="最高気温">
+        <label for="low">最高気温</label>
+        <input type="checkbox" name="what" id="data.main.humidity" value="湿度">
+        <label for="water">湿度</label>
+        <input type="checkbox" name="what" id="data.wind.speed" value="風速">
+        <label for="wind">風速</label>
+    <p> 
 
     <div>
       <button id="answer">回答する</button>
     </div>
-    <p>未完成</p>）
-    <p><span id="kekka"></span></p>
+    <p>未完成</p>
+    <p></p> <span id="result"></span></p>
+    <!--<p></p> <span a="result"></span></p>-->
       <table></table>
     </body>
     </html>
