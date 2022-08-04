@@ -59,7 +59,7 @@ function showResult(resp) {
 	// data が文字列型なら，オブジェクトに変換する
 	if (typeof data === 'string') {
 		data = JSON.parse(data);
-	}
+  }
   let kekka = data.name + "..."
   let cs = document.querySelectorAll('input[name="what"]');
   for (let c of cs) {
