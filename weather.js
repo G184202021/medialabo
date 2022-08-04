@@ -13,7 +13,7 @@ function answer() {
 let b = document.querySelector('#answer');
 b.addEventListener('click', printAnswer);
 
-let a= null
+let a = null
 // 2. イベントハンドラの定義
 
 function printAnswer() {
@@ -66,9 +66,9 @@ function showResult(resp) {
       if (c.checked) {
         if(c.value == "天気") kekka = kekka +" , "+ c.value +" : " + data.weather.descriptiion
         if(c.value == "最低気温") kekka = kekka +" , "+ c.value +" : " + data.main.temp_min + "℃ "
-        if(c.value == "最高気温") kekka = kekka +" , "+  + c.value +" : " + data.main.temp_max + "℃ "
-        if(c.value == "湿度") kekka = kekka+" , "+ + c.value +" : " + data.main.humidity+ "% "
-        if(c.value == "風速") kekka = kekka+" , "+ + c.value +" : " + data.wind.speed + "m/s "
+        if(c.value == "最高気温") kekka = kekka +" , "+ c.value +" : " + data.main.temp_max + "℃ "
+        if(c.value == "湿度") kekka = kekka+" , " + c.value +" : " + data.main.humidity+ "% "
+        if(c.value == "風速") kekka = kekka+" , " + c.value +" : " + data.wind.speed + "m/s "
       }
       
   }
